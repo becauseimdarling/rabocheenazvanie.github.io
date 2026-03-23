@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Альянс Групп — Работа курьером: вакансии. Официальный партнер сервисов доставки.</title>
+    <meta name="description" content="Стань курьером-партнером в Альянс Групп. Свежие вакансии в доставке: Самокат, Яндекс Еда, Магнит. Бесплатный электро-велосипед и бонус 15000р за друга.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Manrope', sans-serif; scroll-behavior: smooth; }
+        .hero-bg { background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); }
+        
+        /* Выпадающее меню */
+        .dropdown:hover .dropdown-menu { display: block; }
+        
+        /* Сетка для текста сбоку */
+        .text-side-block { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        @media (max-width: 768px) { .text-side-block { grid-template-columns: 1fr; gap: 2rem; } }
+
+        /* Анимация пульсации радара */
+        .pulse { position: relative; width: 100px; height: 100px; background: #4f46e5; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 40px; z-index: 1; }
+        .pulse::before { content: ""; position: absolute; width: 100%; height: 100%; border-radius: 50%; background: inherit; opacity: 0.6; animation: pulse-animation 2s infinite; z-index: -1; }
+        @keyframes pulse-animation { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(2.5); opacity: 0; } }
+        
+        .benefit-card { transition: all 0.3s ease; border: 1px solid #f1f5f9; }
+        .benefit-card:hover { transform: translateY(-10px); border-color: #6366f1; background-color: #f8fafc; }
+        
+        /* Мобильное меню через чекбокс */
+        #mobile-menu-toggle:checked ~ #mobile-menu { display: flex; }
+
+        /* Стилизация ползунков калькулятора */
+        input[type=range] { -webkit-appearance: none; appearance: none; background: transparent; }
+        input[type=range]::-webkit-slider-runnable-track { background: #f1f5f9; height: 8px; border-radius: 4px; }
+        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 26px; width: 26px; background: #4f46e5; border-radius: 50%; cursor: pointer; margin-top: -9px; border: 4px solid white; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+    </style>
+</head>
+<body class="bg-white text-slate-900 italic font-medium">
+
+    <!-- ХЕДЕР -->
+    <nav class="fixed w-full z-[100] bg-white/95 backdrop-blur-lg border-b border-slate-100 italic">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex flex-col group text-left">
+                <span class="font-extrabold text-2xl text-indigo-600 leading-none italic uppercase">Альянс Групп</span>
+                <span class="text-[10px] text-slate-400 uppercase tracking-widest font-bold mt-1 italic">Кадровый портал</span>
+            </a>
+
+            <!-- Навигация (Desktop) -->
+            <div class="hidden lg:flex items-center gap-6 font-black uppercase text-xs xl:text-sm tracking-tighter italic text-slate-600">
+                <div class="relative dropdown group h-20 flex items-center cursor-pointer">
+                    <span class="flex items-center gap-1 group-hover:text-indigo-600 transition">
+                        Вакансии 
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </span>
+                    <div class="dropdown-menu absolute hidden top-20 left-0 w-64 bg-white shadow-2xl rounded-2xl border border-slate-100 overflow-hidden">
+                        <a href="samokat.html" class="block px-6 py-4 hover:bg-pink-50 hover:text-pink-600 transition border-b border-slate-50">Самокат</a>
+                        <a href="yandex.html" class="block px-6 py-4 hover:bg-yellow-50 hover:text-yellow-600 transition border-b border-slate-50">Яндекс Еда / Лавка</a>
+                        <a href="magnit.html" class="block px-6 py-4 hover:bg-red-50 hover:text-red-600 transition border-b border-slate-50">Магнит Доставка</a>
+                        <a href="lenta.html" class="block px-6 py-4 hover:bg-blue-50 hover:text-blue-700 transition">Лента Онлайн</a>
+                    </div>
+                </div>
+                <a href="friend.html" class="hover:text-indigo-600 transition flex items-center gap-1"><span class="text-indigo-600">💰</span> Приведи друга</a>
+                <a href="about.html" class="hover:text-indigo-600 transition">О нас</a>
+                <a href="blog.html" class="hover:text-indigo-600 transition">Блог</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="https://t.me/artyom_alyansgroup?text=Привет!%20Хочу%20узнать%20подробнее%20о%20вакансиях." target="_blank" class="hidden sm:inline-block bg-indigo-600 text-white px-6 py-3 rounded-2xl font-black text-sm uppercase transition hover:bg-indigo-700 italic">Написать менеджеру</a>
+                <label for="mobile-menu-toggle" class="lg:hidden cursor-pointer p-2 text-slate-900"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></label>
+            </div>
+        </div>
+
+        <input type="checkbox" id="mobile-menu-toggle" class="hidden">
+        <div id="mobile-menu" class="hidden fixed top-20 left-0 w-full bg-white border-b shadow-2xl flex-col p-6 gap-4 font-black uppercase text-lg italic lg:hidden text-left">
+            <a href="friend.html" class="text-indigo-600">💰 Акция 15 000 ₽</a>
+            <hr>
+            <a href="samokat.html" class="text-pink-600">Самокат</a>
+            <a href="yandex.html" class="text-yellow-600">Яндекс</a>
+            <a href="magnit.html" class="text-red-600">Магнит</a>
+            <a href="lenta.html" class="text-blue-700">Лента</a>
+            <hr>
+            <a href="about.html">О нас</a>
+            <a href="blog.html">Блог</a>
+            <a href="https://t.me/artyom_alyansgroup" class="bg-indigo-600 text-white text-center py-4 rounded-xl mt-4">Написать менеджеру</a>
+        </div>
+    </nav>
+
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+    <header class="pt-48 pb-20 px-4 hero-bg text-white relative overflow-hidden italic text-left">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <h1 class="text-5xl md:text-8xl font-black mb-8 uppercase tracking-tighter leading-none italic">Работа курьером <br><span class="text-indigo-400">в Альянс Групп</span></h1>
+            <p class="text-xl md:text-2xl text-indigo-100 max-w-2xl mb-12 font-bold uppercase tracking-tight italic opacity-90 leading-snug">Официальное подключение к сервисам доставки. Получи электро-велосипед бесплатно!</p>
+            <a href="#services" class="inline-block bg-white text-indigo-900 px-10 py-5 rounded-2xl font-black text-xl uppercase italic shadow-2xl hover:scale-105 transition">Выбрать сервис</a>
+        </div>
+    </header>
+
+    <!-- ПРЕИМУЩЕСТВА -->
+    <section class="py-24 px-4 max-w-7xl mx-auto italic">
+        <h2 class="text-3xl md:text-5xl font-black mb-16 uppercase tracking-tighter text-center">Наши преимущества</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+            <div class="benefit-card p-8 rounded-[3rem] bg-slate-50 flex flex-col justify-between">
+                <div class="text-5xl mb-6">🚀</div>
+                <h3 class="text-xl font-black mb-4 uppercase leading-none italic">Быстрое <br>оформление</h3>
+                <p class="text-slate-500 text-sm font-medium italic">Регистрация за 15 минут. Выход на первую смену уже через 24 часа.</p>
+            </div>
+            <div class="benefit-card p-8 rounded-[3rem] bg-slate-50 border-indigo-200 flex flex-col justify-between">
+                <div class="text-5xl mb-6 text-indigo-600">👨‍💻</div>
+                <h3 class="text-xl font-black mb-4 uppercase leading-none italic text-indigo-600">Менеджер <br>на связи</h3>
+                <p class="text-indigo-600 text-sm font-bold italic">Ваш персональный куратор Альянс Групп поможет с любым вопросом 24/7.</p>
+            </div>
+            <div class="benefit-card p-8 rounded-[3rem] bg-indigo-600 text-white shadow-xl shadow-indigo-100 flex flex-col justify-between">
+                <div class="text-5xl mb-6">🚲⚡</div>
+                <h3 class="text-xl font-black mb-4 uppercase leading-none italic">Бесплатный <br>электро-велосипед</h3>
+                <p class="text-indigo-100 text-sm font-bold italic">Отрабатывай 72 часа в неделю — и мы полностью оплатим аренду велосипеда за тебя!</p>
+            </div>
+            <div class="benefit-card p-8 rounded-[3rem] bg-slate-50 flex flex-col justify-between">
+                <div class="text-5xl mb-6">📈</div>
+                <h3 class="text-xl font-black mb-4 uppercase leading-none italic">Премии <br>и надбавки</h3>
+                <p class="text-slate-500 text-sm font-medium italic">Постоянные бонусы к основной ставке в Альянс Групп.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- АКЦИЯ: ПРИВЕДИ ДРУГА -->
+    <section class="pb-24 px-4 max-w-7xl mx-auto italic">
+        <div class="bg-indigo-600 rounded-[4rem] p-10 md:p-16 text-white flex flex-col md:flex-row items-center justify-between gap-12 relative overflow-hidden shadow-2xl">
+            <div class="relative z-10 flex-1 text-left">
+                <div class="text-5xl mb-6">💰</div>
+                <h2 class="text-4xl md:text-6xl font-black mb-4 uppercase leading-none italic">ПЛАТИМ 15 000 ₽ <br>ЗА КАЖДОГО ДРУГА</h2>
+                <p class="text-indigo-100 text-lg font-bold italic">Приводи друзей в команду Альянс Групп и получай самый высокий бонус на рынке.</p>
+            </div>
+            <a href="friend.html" class="relative z-10 bg-white text-indigo-600 px-12 py-6 rounded-2xl font-black text-2xl uppercase italic hover:bg-slate-100 transition">Участвовать</a>
+            <div class="absolute -right-10 -bottom-10 text-[180px] font-black text-white/10 italic select-none">CASH</div>
+        </div>
+    </section>
+
+    <!-- ИНФОРМАЦИОННЫЙ БЛОК 1 (РАДАР) -->
+    <section class="py-24 px-4 max-w-7xl mx-auto italic">
+        <div class="text-side-block">
+            <div class="text-left">
+                <h2 class="text-4xl font-black mb-8 uppercase tracking-tighter italic">Как устроена работа <br><span class="text-indigo-600 italic italic">в доставке сегодня?</span></h2>
+                <div class="space-y-6 text-slate-600 font-medium italic leading-relaxed">
+                    <p>Работа курьером — это идеальная <strong>подработка для студентов</strong> и тех, кто ищет <strong>работу без опыта</strong>. Вы сами управляете своим временем: можно выходить на смены от 2 до 12 часов в день.</p>
+                    <p>Все процессы автоматизированы. С <strong>Альянс Групп</strong> вы получаете заказы рядом с домом и поддержку на каждом этапе пути.</p>
+                </div>
+            </div>
+            <div class="flex items-center justify-center p-12 bg-indigo-50 rounded-[4rem] border-2 border-indigo-100 relative h-[400px]">
+                <div class="pulse text-white">📍</div>
+                <div class="absolute bottom-8 text-center italic">
+                    <p class="font-black text-indigo-900 uppercase italic">Работа у твоего дома</p>
+                    <p class="text-xs text-indigo-400 font-bold uppercase tracking-widest mt-1">Доставка в радиусе 1.5 км</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПЛАВНЫЙ КАЛЬКУЛЯТОР -->
+    <section class="py-24 px-4 bg-indigo-50 italic">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-side-block">
+                <div class="text-left">
+                    <h2 class="text-4xl md:text-6xl font-black mb-8 uppercase tracking-tighter italic italic">Рассчитай свой <br><span class="text-indigo-600 italic">реальный доход</span></h2>
+                    
+                    <div class="space-y-10 bg-white p-8 md:p-12 rounded-[3rem] shadow-2xl border border-white">
+                        <div>
+                            <div class="flex justify-between items-center mb-6">
+                                <label class="text-xs font-black uppercase text-slate-400 tracking-widest">Часов в день</label>
+                                <span class="bg-indigo-600 text-white px-4 py-1 rounded-full text-xl font-black italic" id="hours-val">8</span>
+                            </div>
+                            <input type="range" min="4" max="16" value="8" class="w-full" id="hours-range">
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-6">
+                                <label class="text-xs font-black uppercase text-slate-400 tracking-widest">Дней в неделю</label>
+                                <span class="bg-indigo-600 text-white px-4 py-1 rounded-full text-xl font-black italic" id="days-val">5</span>
+                            </div>
+                            <input type="range" min="1" max="7" value="5" class="w-full" id="days-range">
+                        </div>
+                        <div class="pt-8 border-t-2 border-slate-50">
+                            <p class="text-sm font-bold text-slate-400 uppercase italic">Итого в месяц (примерно):</p>
+                            <div class="flex items-baseline gap-2">
+                                <p class="text-6xl md:text-7xl font-black text-slate-900 mt-2 italic tracking-tighter" id="total-income">0</p>
+                                <span class="text-3xl font-black text-indigo-600 italic">₽</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 rounded-[4rem] p-10 md:p-14 text-white relative overflow-hidden flex flex-col justify-center text-left min-h-[500px]">
+                    <h3 class="text-3xl font-black mb-8 uppercase italic italic">Работаем по всей <br>России</h3>
+                    <div class="flex flex-wrap gap-3 italic mb-10">
+                        <span class="px-5 py-3 bg-white/10 rounded-2xl text-base font-black border border-white/10 italic">Москва</span>
+                        <span class="px-5 py-3 bg-white/10 rounded-2xl text-base font-black border border-white/10 italic">Санкт-Петербург</span>
+                        <span class="px-5 py-3 bg-white/10 rounded-2xl text-base font-black border border-white/10 italic">Краснодар</span>
+                        <span class="px-5 py-3 bg-white/10 rounded-2xl text-base font-black border border-white/10 italic">Казань</span>
+                        <span class="px-5 py-3 bg-white/10 rounded-2xl text-base font-black border border-white/10 italic">Екатеринбург</span>
+                        <span class="px-5 py-3 bg-white/10 rounded-2xl text-base font-black border border-white/10 italic">Нижний Новгород</span>
+                        <span class="px-5 py-3 bg-white/10 rounded-2xl text-base font-black border border-white/10 italic">Ростов-на-Дону</span>
+                    </div>
+                    <p class="border-t border-white/10 pt-8 text-2xl font-black text-indigo-400 uppercase italic">И еще более 150 городов!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- КАРТОЧКИ ПАРТНЕРОВ -->
+    <section id="services" class="py-24 px-4 bg-slate-900 text-white italic">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-6xl font-black text-center mb-20 uppercase tracking-tighter italic italic font-black">Наши партнеры</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                <!-- Самокат -->
+                <a href="samokat.html" class="group relative bg-white/5 border border-white/10 rounded-[3.5rem] p-12 transition-all duration-500 hover:-translate-y-2 hover:bg-pink-600 flex flex-col justify-between h-[400px]">
+                    <div>
+                        <div class="w-16 h-16 bg-pink-500 rounded-2xl flex items-center justify-center text-white font-black italic text-3xl mb-8 group-hover:bg-white group-hover:text-pink-600 transition">С</div>
+                        <h3 class="text-5xl font-black mb-4 italic uppercase italic font-black">САМОКАТ</h3>
+                        <p class="text-slate-400 text-lg font-bold uppercase group-hover:text-white transition italic font-bold">140/час + 40/заказ. Работа у дома.</p>
+                    </div>
+                    <span class="inline-block border-2 border-white px-8 py-3 rounded-full font-black uppercase group-hover:bg-white group-hover:text-pink-600 transition w-fit italic">Подробнее →</span>
+                </a>
+                <!-- Яндекс -->
+                <a href="yandex.html" class="group relative bg-white/5 border border-white/10 rounded-[3.5rem] p-12 transition-all duration-500 hover:-translate-y-2 hover:bg-yellow-400 flex flex-col justify-between h-[400px]">
+                    <div>
+                        <div class="w-16 h-16 bg-yellow-400 rounded-2xl flex items-center justify-center text-black font-black italic text-3xl mb-8 group-hover:bg-black group-hover:text-yellow-400 transition italic">Я</div>
+                        <h3 class="text-5xl font-black mb-4 italic uppercase group-hover:text-black transition italic font-black italic">ЯНДЕКС</h3>
+                        <p class="text-slate-400 text-lg font-bold uppercase group-hover:text-black transition italic font-bold">Выплаты каждый день. Свободный график.</p>
+                    </div>
+                    <span class="inline-block border-2 border-white px-8 py-3 rounded-full font-black uppercase group-hover:bg-black group-hover:text-yellow-400 group-hover:border-black transition w-fit italic">Подробнее →</span>
+                </a>
+                <!-- Магнит -->
+                <a href="magnit.html" class="group relative bg-white/5 border border-white/10 rounded-[3.5rem] p-12 transition-all duration-500 hover:-translate-y-2 hover:bg-red-600 flex flex-col justify-between h-[400px]">
+                    <div>
+                        <div class="w-16 h-16 bg-red-600 rounded-2xl flex items-center justify-center text-white font-black italic text-3xl mb-8 group-hover:bg-white group-hover:text-red-600 transition italic italic">М</div>
+                        <h3 class="text-5xl font-black mb-4 italic uppercase italic font-black">МАГНИТ</h3>
+                        <p class="text-slate-400 text-lg font-bold uppercase group-hover:text-white transition italic font-bold">Работа в одном районе. Минимум пробега.</p>
+                    </div>
+                    <span class="inline-block border-2 border-white px-8 py-3 rounded-full font-black uppercase group-hover:bg-white group-hover:text-red-600 transition w-fit italic font-black">Подробнее →</span>
+                </a>
+                <!-- Лента -->
+                <a href="lenta.html" class="group relative bg-white/5 border border-white/10 rounded-[3.5rem] p-12 transition-all duration-500 hover:-translate-y-2 hover:bg-blue-700 flex flex-col justify-between h-[400px]">
+                    <div>
+                        <div class="w-16 h-16 bg-blue-700 rounded-2xl flex items-center justify-center text-white font-black italic text-3xl mb-8 group-hover:bg-white group-hover:text-blue-700 transition italic italic italic font-black">Л</div>
+                        <h3 class="text-5xl font-black mb-4 italic uppercase italic font-black tracking-tighter">ЛЕНТА</h3>
+                        <p class="text-slate-400 text-lg font-bold uppercase group-hover:text-white transition italic font-bold">Бесплатное питание. Доход до 150 000 ₽.</p>
+                    </div>
+                    <span class="inline-block border-2 border-white px-8 py-3 rounded-full font-black uppercase group-hover:bg-white group-hover:text-blue-700 transition w-fit italic font-black">Подробнее →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ИНФОРМАЦИОННЫЙ БЛОК 2 (ГРАФИК) -->
+    <section class="py-24 px-4 max-w-7xl mx-auto italic">
+        <div class="text-side-block">
+            <div class="order-2 md:order-1 flex items-center justify-center p-8 bg-slate-900 rounded-[4rem] h-[400px] shadow-2xl relative italic">
+                <div class="text-center font-black">
+                    <div class="text-indigo-400 text-sm font-black uppercase tracking-widest mb-2 italic">Максимальный доход курьера</div>
+                    <div class="text-white text-6xl font-black italic">150 000 ₽</div>
+                    <div class="mt-8 flex justify-center items-end gap-2 italic">
+                        <div class="w-3 h-12 bg-indigo-500 rounded-full"></div>
+                        <div class="w-3 h-20 bg-indigo-500 rounded-full"></div>
+                        <div class="w-3 h-32 bg-indigo-400 rounded-full"></div>
+                        <div class="w-3 h-40 bg-white rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2 text-left italic font-bold italic">
+                <h2 class="text-4xl font-black mb-8 uppercase tracking-tighter italic">Кто может стать курьером? <br><span class="text-indigo-600 italic">Альянс Групп</span></h2>
+                <div class="space-y-6 text-slate-600 font-medium italic leading-relaxed italic">
+                    <p>Основные требования в 2026 году — это наличие смартфона, пунктуальность и желание работать. Мы принимаем партнеров Альянс Групп с любым гражданством.</p>
+                    <p>С нами вы не тратитесь на транспорт — наш оффер по <strong>бесплатному электровелосипеду</strong> за 72 часа работы в неделю решает этот вопрос полностью.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO ТЕКСТ -->
+    <section class="py-20 bg-slate-50 border-t border-slate-100 italic">
+        <div class="max-w-4xl mx-auto px-4 text-slate-400 text-sm leading-relaxed text-center italic">
+            <h2 class="text-slate-900 font-black uppercase mb-4 tracking-widest text-xs italic italic">Альянс Групп: Вакансии курьера</h2>
+            <p class="mb-4">Ищете <strong>работу курьером</strong>? Альянс Групп подключает к Яндекс Еде, Самокату и Магниту. <strong>Подработка для студентов без опыта</strong> с бонусами и поддержкой.</p>
+        </div>
+    </section>
+
+    <!-- ФУТЕР -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 px-4 italic font-bold">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 text-left">
+                <div class="space-y-6">
+                    <div class="flex flex-col text-left">
+                        <span class="font-extrabold text-2xl text-indigo-400 leading-none uppercase italic">Альянс Групп</span>
+                        <span class="text-[10px] text-slate-500 uppercase tracking-widest mt-1 italic">Кадровый портал</span>
+                    </div>
+                    <p class="text-slate-400 text-sm font-medium leading-relaxed italic">Крупнейший официальный партнер сервисов доставки в России. Мы работаем честно и платим вовремя.</p>
+                    <div class="flex flex-col gap-3 italic">
+                        <p class="text-xs uppercase text-indigo-400 tracking-widest">Наше сообщество:</p>
+                        <a href="https://t.me/AllianceGroupVIP" target="_blank" class="flex items-center gap-3 group">
+                            <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center group-hover:bg-indigo-500 transition shadow-lg">
+                                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.35-.49.96-.75 3.78-1.65 6.31-2.74 7.58-3.27 3.61-1.5 4.35-1.76 4.84-1.77.11 0 .35.03.51.16.13.11.17.26.19.37.02.08.03.23.02.32z"/></svg>
+                            </div>
+                            <span class="text-sm font-black uppercase group-hover:text-indigo-400 transition italic">TG Канал Альянс Групп</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="text-left">
+                    <h4 class="text-indigo-400 uppercase text-xs tracking-widest mb-6 font-black italic">Сервисы</h4>
+                    <ul class="space-y-4 text-sm font-bold uppercase italic">
+                        <li><a href="samokat.html" class="hover:text-pink-500 transition">Самокат</a></li>
+                        <li><a href="yandex.html" class="hover:text-yellow-400 transition">Яндекс Еда</a></li>
+                        <li><a href="magnit.html" class="hover:text-red-500 transition">Магнит Доставка</a></li>
+                        <li><a href="lenta.html" class="hover:text-blue-500 transition">Лента Онлайн</a></li>
+                    </ul>
+                </div>
+                <div class="text-left">
+                    <h4 class="text-indigo-400 uppercase text-xs tracking-widest mb-6 font-black italic">Навигация</h4>
+                    <ul class="space-y-4 text-sm font-bold uppercase italic">
+                        <li><a href="friend.html" class="hover:text-white transition italic">Приведи друга</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition italic">Блог курьера</a></li>
+                        <li><a href="about.html" class="hover:text-white transition italic">О компании</a></li>
+                    </ul>
+                </div>
+                <div class="bg-white/5 p-6 rounded-[2.5rem] border border-white/10 italic text-center md:text-left">
+                    <h4 class="text-white uppercase text-xs tracking-widest mb-4 font-black italic">Связь</h4>
+                    <div class="space-y-3">
+                        <a href="https://t.me/artyom_alyansgroup" target="_blank" class="block w-full bg-indigo-600 text-center py-4 rounded-2xl hover:bg-indigo-500 transition uppercase text-xs font-black italic">Написать менеджеру</a>
+                        <a href="https://t.me/AllianceGroupVIP" target="_blank" class="block w-full border border-white/20 text-center py-4 rounded-2xl hover:bg-white/10 transition uppercase text-xs font-black italic">Вступить в канал</a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-10 border-t border-white/5 text-[10px] text-slate-500 uppercase tracking-widest text-center italic">
+                Альянс Групп &copy;. Официальный партнер. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <!-- СКРИПТ КАЛЬКУЛЯТОРА -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hRange = document.getElementById('hours-range');
+            const dRange = document.getElementById('days-range');
+            const hVal = document.getElementById('hours-val');
+            const dVal = document.getElementById('days-val');
+            const totalDisplay = document.getElementById('total-income');
+
+            let currentDisplayValue = 0;
+            let targetValue = 0;
+
+            function calculate() {
+                hVal.innerText = hRange.value;
+                dVal.innerText = dRange.value;
+                // Расчет: Часы * Дни * 4 недели * 460 руб/час
+                targetValue = parseInt(hRange.value) * parseInt(dRange.value) * 4 * 460;
+            }
+
+            function animateStep() {
+                const difference = targetValue - currentDisplayValue;
+                if (Math.abs(difference) > 1) {
+                    currentDisplayValue += difference * 0.15;
+                } else {
+                    currentDisplayValue = targetValue;
+                }
+                totalDisplay.innerText = Math.floor(currentDisplayValue).toLocaleString('ru-RU');
+                requestAnimationFrame(animateStep);
+            }
+
+            hRange.addEventListener('input', calculate);
+            dRange.addEventListener('input', calculate);
+
+            calculate();
+            animateStep();
+        });
+    </script>
+</body>
+</html>
