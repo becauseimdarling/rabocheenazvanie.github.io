@@ -1,2 +1,2 @@
 # rabocheenazvanie.github.io
-samoka i td
+samokat i td
