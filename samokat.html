@@ -2,135 +2,137 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Работа курьером в Самокате: вакансии и свежие условия | Альянс Групп</title>
-    <meta name="description" content="Стань курьером в Самокате через Альянс Групп. Почасовая оплата 140р + 40р за заказ. Свежие вакансии курьера. Бесплатный электробайк и форма.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Работа курьером в Самокате: вакансии и условия подключения | Альянс Групп</title>
+    <meta name="description" content="Стань курьером в Самокате через Альянс Групп. Почасовая оплата 140р + 40р за заказ. Свежие вакансии курьера. Бесплатный электро-велосипед и форма.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Manrope', sans-serif; scroll-behavior: smooth; }
+        body { font-family: 'Manrope', sans-serif; scroll-behavior: smooth; overflow-x: hidden; background-color: #fff; -webkit-font-smoothing: antialiased; }
         .samokat-gradient { background: linear-gradient(135deg, #ff335f 0%, #e61e4d 100%); }
         .dropdown:hover .dropdown-menu { display: block; }
-        .text-side-block { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-        @media (max-width: 768px) { .text-side-block { grid-template-columns: 1fr; gap: 2rem; } }
-        #mobile-menu-toggle:checked ~ #mobile-menu { display: flex; }
         
-        /* Тот самый блок преимуществ с градиентной рамкой */
+        /* Контейнер для фиксации ширины */
+        .container-custom { max-width: 1280px; margin-left: auto; margin-right: auto; padding-left: 1.5rem; padding-right: 1.5rem; }
+
+        /* Сетка для текста сбоку */
+        .text-side-block { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        
+        /* Премиальный блок преимуществ с градиентной рамкой */
         .premium-border { 
             border: 2px solid transparent; 
             background: linear-gradient(white, white) padding-box, linear-gradient(135deg, #ff335f, #4f46e5) border-box; 
         }
         .benefit-item { transition: all 0.3s ease; }
         .benefit-item:hover { transform: translateX(10px); color: #ff335f; }
+
+        /* 3D Эффект текста */
+        .text-3d {
+            text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1);
+        }
+
+        #mobile-menu-toggle:checked ~ #mobile-menu { display: flex; }
+
+        @media (max-width: 1024px) {
+            .hero-title { font-size: 2.7rem !important; line-height: 1.1; }
+            .text-side-block { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+        }
     </style>
 </head>
-<body class="bg-white text-slate-900">
+<body class="bg-white text-slate-900 italic font-medium text-left">
 
-    <<!-- ХЕДЕР С ДОБАВЛЕННОЙ ССЫЛКОЙ "ПРИВЕДИ ДРУГА" -->
+    <!-- ХЕДЕР -->
     <nav class="fixed w-full z-[100] bg-white/95 backdrop-blur-lg border-b border-slate-100 italic">
-        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between text-left">
-            
-            <!-- Логотип -->
-            <a href="index.html" class="flex flex-col group">
-                <span class="font-extrabold text-2xl text-indigo-600 leading-none italic uppercase">Альянс Групп</span>
-                <span class="text-[10px] text-slate-400 uppercase tracking-widest font-bold mt-1 italic">Кадровый портал</span>
+        <div class="container-custom h-16 md:h-20 flex items-center justify-between">
+            <a href="index.html" class="flex flex-col text-left">
+                <span class="font-extrabold text-xl md:text-2xl text-indigo-600 leading-none uppercase italic">Альянс Групп</span>
+                <span class="text-[10px] text-slate-400 uppercase tracking-widest font-bold mt-1">Кадровый портал</span>
             </a>
 
-            <!-- Навигация (Desktop) -->
-            <div class="hidden lg:flex items-center gap-6 font-black uppercase text-xs xl:text-sm tracking-tighter italic text-slate-600">
-                
-                <!-- Вакансии (Dropdown) -->
+            <!-- Навигация Desktop -->
+            <div class="hidden lg:flex items-center gap-8 font-black uppercase text-sm text-slate-600">
                 <div class="relative dropdown group h-20 flex items-center cursor-pointer">
-                    <span class="flex items-center gap-1 group-hover:text-indigo-600 transition">
-                        Вакансии 
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </span>
-                    <div class="dropdown-menu absolute hidden top-20 left-0 w-64 bg-white shadow-2xl rounded-2xl border border-slate-100 overflow-hidden">
-                        <a href="samokat.html" class="block px-6 py-4 hover:bg-pink-50 hover:text-pink-600 transition border-b border-slate-50">Самокат</a>
-                        <a href="yandex.html" class="block px-6 py-4 hover:bg-yellow-50 hover:text-yellow-600 transition border-b border-slate-50">Яндекс Еда / Лавка</a>
-                        <a href="magnit.html" class="block px-6 py-4 hover:bg-red-50 hover:text-red-600 transition border-b border-slate-50">Магнит Доставка</a>
-                        <a href="lenta.html" class="block px-6 py-4 hover:bg-blue-50 hover:text-blue-700 transition">Лента Онлайн</a>
+                    <span class="flex items-center gap-1 group-hover:text-indigo-600 transition">Вакансии <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                    <div class="dropdown-menu absolute hidden top-20 left-0 w-64 bg-white shadow-2xl rounded-2xl border border-slate-100 overflow-hidden font-bold">
+                        <a href="samokat.html" class="block px-6 py-4 hover:bg-pink-50 hover:text-pink-600 border-b border-slate-50 transition font-black">Самокат</a>
+                        <a href="yandex.html" class="block px-6 py-4 hover:bg-yellow-50 hover:text-yellow-600 border-b border-slate-50 transition">Яндекс</a>
+                        <a href="magnit.html" class="block px-6 py-4 hover:bg-red-50 hover:text-red-600 border-b border-slate-50 transition">Магнит</a>
+                        <a href="lenta.html" class="block px-6 py-4 hover:bg-blue-50 hover:text-blue-700 transition">Лента</a>
                     </div>
                 </div>
-
-                <!-- НОВАЯ ССЫЛКА: ПРИВЕДИ ДРУГА -->
-                <a href="friend.html" class="hover:text-indigo-600 transition flex items-center gap-1 italic">
-                    <span class="text-indigo-600">💰</span> Приведи друга
-                </a>
-
+                <a href="friend.html" class="hover:text-indigo-600 transition flex items-center gap-1">💰 Приведи друга</a>
                 <a href="about.html" class="hover:text-indigo-600 transition">О нас</a>
                 <a href="blog.html" class="hover:text-indigo-600 transition">Блог</a>
             </div>
 
-            <!-- Кнопка и Бургер -->
             <div class="flex items-center gap-4">
-                <a href="https://t.me/artyom_alyansgroup?text=Привет!%20Хочу%20узнать%20подробнее%20о%20вакансиях." target="_blank" class="hidden sm:inline-block bg-indigo-600 text-white px-6 py-3 rounded-2xl font-black text-sm uppercase transition hover:bg-indigo-700 italic shadow-lg shadow-indigo-100">
-                    Написать менеджеру
-                </a>
-                
-                <label for="mobile-menu-toggle" class="lg:hidden cursor-pointer p-2 text-slate-900">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                </label>
+                <a href="https://t.me/artyom_alyansgroup?text=Привет!%20Хочу%20в%20Самокат." target="_blank" class="hidden sm:inline-block bg-pink-600 text-white px-5 py-2.5 rounded-2xl font-black text-xs uppercase transition hover:bg-pink-700 italic">Написать менеджеру</a>
+                <label for="mobile-menu-toggle" class="lg:hidden cursor-pointer p-2 text-slate-900"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></label>
             </div>
         </div>
-
-        <!-- Мобильное меню (обновленное) -->
         <input type="checkbox" id="mobile-menu-toggle" class="hidden">
-        <div id="mobile-menu" class="hidden fixed top-20 left-0 w-full bg-white border-b shadow-2xl flex-col p-6 gap-4 font-black uppercase text-lg italic lg:hidden text-left">
-            <p class="text-slate-400 text-[10px] tracking-widest">Разделы сайта:</p>
-            <a href="friend.html" class="text-indigo-600">💰 Акция 15 000 ₽</a>
+        <div id="mobile-menu" class="hidden fixed top-16 left-0 w-full bg-white border-b shadow-2xl flex-col p-6 gap-4 font-black uppercase text-base italic lg:hidden text-left">
+            <a href="friend.html" class="text-indigo-600 font-black">💰 Акция 15 000 ₽</a>
             <hr>
-            <a href="samokat.html" class="text-pink-600">Самокат</a>
-            <a href="yandex.html" class="text-yellow-600">Яндекс</a>
-            <a href="magnit.html" class="text-red-600">Магнит</a>
-            <a href="lenta.html" class="text-blue-700">Лента</a>
+            <a href="samokat.html" class="text-pink-600 font-black">Самокат</a>
+            <a href="yandex.html">Яндекс</a>
+            <a href="magnit.html">Магнит</a>
+            <a href="lenta.html">Лента</a>
             <hr>
             <a href="about.html">О нас</a>
             <a href="blog.html">Блог</a>
-            <a href="https://t.me/artyom_alyansgroup" class="bg-indigo-600 text-white text-center py-4 rounded-xl mt-4">Написать менеджеру</a>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <header class="pt-48 pb-24 px-4 samokat-gradient text-white relative overflow-hidden italic text-left">
-        <div class="max-w-7xl mx-auto relative z-10">
-            <h1 class="text-6xl md:text-9xl font-black mb-8 uppercase tracking-tighter leading-none italic">Работа в <br>Самокате</h1>
-            <p class="text-xl md:text-3xl max-w-3xl mb-12 font-bold uppercase tracking-tight italic opacity-90">Платим за время, заказы и твою активность. Подключаем за 24 часа через Альянс Групп.</p>
-            <a href="https://t.me/artyom_alyansgroup?text=Готов%20начать%20работать%20в%20Самокате!" target="_blank" class="inline-block bg-white text-pink-600 px-12 py-6 rounded-2xl font-black text-2xl uppercase italic shadow-2xl hover:scale-105 transition">Устроиться сейчас</a>
+    <!-- HERO SECTION С 3D АНИМАЦИЕЙ -->
+    <header id="hero-parallax" class="pt-32 pb-16 md:pt-48 md:pb-24 px-4 samokat-gradient text-white relative overflow-hidden italic text-left" style="perspective: 1000px;">
+        <div class="container-custom relative z-10">
+            <div id="tilt-target" style="transform-style: preserve-3d; transition: transform 0.1s ease-out;">
+                <h1 class="hero-title text-4xl md:text-9xl font-black mb-6 uppercase tracking-tighter leading-none italic text-3d" style="transform: translateZ(60px);">
+                    Работа в <br><span class="opacity-80 italic">Самокате</span>
+                </h1>
+                <p class="text-base md:text-2xl text-pink-100 max-w-3xl mb-12 font-bold uppercase tracking-tight italic opacity-90 leading-snug" style="transform: translateZ(30px);">
+                    Ваш стабильный доход: платим за время, заказы и твою активность. <br>Подключаем за 24 часа через Альянс Групп.
+                </p>
+                <div style="transform: translateZ(45px);">
+                    <a href="https://t.me/artyom_alyansgroup?text=Готов%20начать%20работать%20в%20Самокате!" target="_blank" class="inline-block bg-white text-pink-600 px-8 py-4 md:px-12 md:py-6 rounded-2xl font-black text-lg md:text-2xl uppercase italic shadow-2xl hover:scale-105 transition">Устроиться сейчас</a>
+                </div>
+            </div>
         </div>
-        <div class="absolute -right-20 top-40 text-[250px] font-black text-white/5 select-none uppercase italic">SPEED</div>
+        <div class="absolute -right-20 top-40 text-[250px] font-black text-white/5 select-none uppercase italic">FAST</div>
     </header>
 
-    <!-- ИНФОРМАЦИОННЫЙ БЛОК 1 -->
-    <section class="py-24 px-4 max-w-7xl mx-auto italic font-bold">
-        <div class="text-side-block">
-            <div class="order-2 md:order-1 p-12 bg-pink-50 rounded-[4rem] border-2 border-pink-100 flex flex-col justify-center h-[450px] italic">
-                <p class="text-pink-600 text-xs font-black uppercase tracking-[0.3em] mb-6 italic">Твой день в доставке</p>
-                <h3 class="text-3xl font-black uppercase text-pink-900 mb-6 italic">Как проходит смена <br>в Самокате?</h3>
-                <p class="text-pink-800/70 text-lg leading-relaxed italic">Вы приходите в комфортный даркстор, получаете заказы через приложение и доставляете их в радиусе до 3 километров. Это позволяет совершать много поездок, не переутомляясь.</p>
-            </div>
-            <div class="order-1 md:order-2 text-left">
-                <h2 class="text-4xl font-black mb-8 uppercase tracking-tighter text-slate-900 italic italic italic">Свежие вакансии курьера <br><span class="text-pink-600 italic">в Самокате от Альянс Групп</span></h2>
-                <div class="space-y-6 text-slate-600 font-medium italic leading-relaxed">
-                    <p><strong>Работа курьером в Самокате</strong> сегодня — это один из самых востребованных способов заработка с гибким графиком. В 2026 году сервис продолжает расширяться, и <strong>Альянс Групп</strong>, как официальный партнер, предлагает вам уникальные условия подключения.</p>
-                    <p>Здесь вы становитесь частью современной технологичной компании. Мы предлагаем <strong>вакансии курьера Самокат</strong> как для пеших партнеров, так и для тех, кто предпочитает передвигаться на велосипеде или электросамокате.</p>
-                    <p>Это идеальная <strong>подработка для студентов</strong>: вы сами выбираете интервалы работы (от 2 часов в день) и можете совмещать доставку с учебой.</p>
+    <!-- SEO БЛОК 1: О ПРОЦЕССЕ -->
+    <section class="py-24">
+        <div class="container-custom">
+            <div class="text-side-block italic font-bold">
+                <div class="order-2 md:order-1 p-12 bg-pink-50 rounded-[4rem] border-2 border-pink-100 flex flex-col justify-center h-[450px] italic">
+                    <p class="text-pink-600 text-xs font-black uppercase tracking-[0.3em] mb-6">Твой день в доставке</p>
+                    <h3 class="text-3xl font-black uppercase text-pink-900 mb-6 italic">Как проходит смена <br>в Самокате?</h3>
+                    <p class="text-pink-800/70 text-lg leading-relaxed">Вы приходите в комфортный даркстор, получаете заказы через приложение и доставляете их в радиусе до 3 километров. Это позволяет совершать много поездок, не переутомляясь.</p>
+                </div>
+                <div class="order-1 md:order-2 text-left italic">
+                    <h2 class="text-4xl md:text-5xl font-black mb-8 uppercase tracking-tighter text-slate-900 italic">Свежие вакансии курьера <br><span class="text-pink-600 italic">в Самокат от Альянс Групп</span></h2>
+                    <div class="space-y-6 text-slate-600 font-medium italic leading-relaxed">
+                        <p><strong>Работа курьером в Самокате</strong> сегодня — это один из самых востребованных способов заработка с гибким графиком. Наша компания предлагает максимально упрощенный процесс входа. Мы подберем для вас вакансию рядом с домом, предоставим всё необходимое оборудование и обучим специфике сервиса.</p>
+                        <p>В отличие от других агрегаторов, <strong>курьер Самокат</strong> всегда знает свой минимальный доход благодаря почасовой ставке. Это делает данную позицию идеальной <strong>подработкой для студентов</strong> и тех, кто ищет стабильную <strong>работу без опыта</strong> в крупной федеральной сети.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ВОЗВРАЩЕННЫЙ БЛОК ПРЕИМУЩЕСТВ (PREMIUM BORDER) -->
-    <section class="py-24 px-4 bg-slate-900 italic font-black">
-        <div class="max-w-7xl mx-auto">
-            <div class="bg-white rounded-[4rem] p-12 md:p-20 shadow-2xl relative overflow-hidden premium-border italic">
+    <!-- ПРЕМИАЛЬНЫЙ БЛОК ПРЕИМУЩЕСТВ -->
+    <section class="py-24 bg-slate-900 italic font-black">
+        <div class="container-custom">
+            <div class="bg-white rounded-[4rem] p-10 md:p-20 shadow-2xl relative overflow-hidden premium-border">
                 <div class="grid lg:grid-cols-2 gap-16 items-center relative z-10 text-left">
                     <div>
                         <h2 class="text-5xl font-black mb-10 uppercase tracking-tighter italic">Твои привилегии <br><span class="text-pink-600 italic">с Альянс Групп:</span></h2>
-                        <div class="space-y-8 font-black uppercase text-xl md:text-2xl italic leading-none">
+                        <div class="space-y-8 font-black uppercase text-xl md:text-2xl italic leading-none italic font-black">
                             <div class="benefit-item flex items-center gap-6">
                                 <span class="text-4xl">🚲</span>
-                                <p>Бесплатный электробайк за 72ч работы</p>
+                                <p>Бесплатный электро-велосипед за 72ч работы</p>
                             </div>
                             <div class="benefit-item flex items-center gap-6">
                                 <span class="text-4xl">💰</span>
@@ -138,7 +140,7 @@
                             </div>
                             <div class="benefit-item flex items-center gap-6">
                                 <span class="text-4xl">💳</span>
-                                <p>Выплаты без задержек раз в неделю</p>
+                                <p>Выплаты раз в неделю без задержек</p>
                             </div>
                             <div class="benefit-item flex items-center gap-6">
                                 <span class="text-4xl">👨‍💻</span>
@@ -147,12 +149,12 @@
                         </div>
                     </div>
                     <div class="text-center italic">
-                        <div class="inline-block p-10 bg-pink-600 text-white rounded-[3rem] shadow-2xl shadow-pink-200 rotate-2">
-                            <p class="text-xl uppercase font-bold mb-2 italic">Твой бонус:</p>
-                            <p class="text-6xl font-black italic">0 ₽</p>
+                        <div class="inline-block p-10 bg-pink-600 text-white rounded-[3rem] shadow-2xl rotate-2 border-4 border-white italic font-black">
+                            <p class="text-xl uppercase font-bold mb-2">Твой бонус:</p>
+                            <p class="text-7xl italic font-black">0 ₽</p>
                             <p class="text-xl uppercase font-bold mt-2">за аренду транспорта</p>
                         </div>
-                        <p class="mt-10 text-slate-400 font-bold uppercase italic italic italic">Отрабатывай план и забирай транспорт бесплатно!</p>
+                        <p class="mt-10 text-slate-400 font-bold uppercase italic text-sm">Альянс Групп — мы платим больше!</p>
                     </div>
                 </div>
                 <div class="absolute -right-10 -bottom-10 text-[200px] font-black text-slate-50 select-none italic">VIP</div>
@@ -160,110 +162,99 @@
         </div>
     </section>
 
-    <!-- ИНФОРМАЦИОННЫЙ БЛОК 2 (SEO ТЕКСТ) -->
-    <section class="py-24 px-4 max-w-7xl mx-auto italic font-bold">
-        <div class="text-side-block">
-            <div class="text-left">
-                <h2 class="text-4xl font-black mb-8 uppercase tracking-tighter italic">Как начисляется доход <br><span class="text-pink-600 italic">в Самокате?</span></h2>
-                <div class="space-y-6 text-slate-600 font-medium italic leading-relaxed italic">
-                    <p>Ваша <strong>зарплата курьера</strong> состоит из нескольких уровней. Базовая часть — 140 рублей за каждый час смены. Это гарантированный минимум, который вы получите в любом случае.</p>
-                    <p>Вторая часть — это доплата 40 рублей за каждый доставленный заказ. <strong>Альянс Групп</strong> также начисляет бонусы и надбавки за работу в выходные дни или плохую погоду.</p>
-                    <p>Итоговый доход в месяц может достигать 150 000 рублей. Все выплаты производятся еженедельно на карту любого удобного для вас банка. Мы открываем <strong>вакансии в Самокате</strong> для тех, кто хочет честно зарабатывать.</p>
+    <!-- SEO БЛОК 2: ДЕНЬГИ -->
+    <section class="py-24">
+        <div class="container-custom">
+            <div class="text-side-block italic font-bold">
+                <div class="text-left italic">
+                    <h2 class="text-4xl font-black mb-8 uppercase tracking-tighter italic text-pink-600">Как начисляется доход <br>в Самокате?</h2>
+                    <div class="space-y-6 text-slate-600 font-medium italic leading-relaxed">
+                        <p>Ваша <strong>зарплата курьера</strong> состоит из нескольких уровней. Базовая часть — 140 рублей за каждый час смены. Это гарантированный минимум, который вы получите в любом случае.</p>
+                        <p>Вторая часть — это доплата 40 рублей за каждый доставленный заказ. Активные курьеры успевают доставить от 3 до 5 заказов в час, что значительно увеличивает итоговый чек. <strong>Альянс Групп</strong> также начисляет бонусы за стаж и надбавки за плохую погоду.</p>
+                        <p>Итоговый доход в месяц может достигать 150 000 рублей. Все выплаты производятся еженедельно на карту любого банка. Мы открываем <strong>вакансии в Самокате</strong> для тех, кто хочет честно зарабатывать.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="bg-slate-900 p-12 rounded-[4rem] text-white flex flex-col justify-center h-[450px] italic shadow-2xl">
-                <div class="mb-10 text-center border-b border-white/10 pb-8 italic">
-                    <p class="text-5xl font-black text-pink-500 mb-2 italic">140 + 40</p>
-                    <p class="text-slate-400 uppercase text-xs font-bold tracking-widest italic italic">Золотой стандарт оплаты</p>
-                </div>
-                <div class="space-y-6 font-black uppercase text-base italic italic">
-                    <p class="flex justify-between tracking-tighter"><span>Ставка в час:</span> <span class="text-pink-500">140 ₽</span></p>
-                    <p class="flex justify-between tracking-tighter"><span>За заказ:</span> <span class="text-pink-500">+40 ₽</span></p>
-                    <p class="flex justify-between tracking-tighter italic"><span>Надбавки за погоду:</span> <span class="text-pink-500 italic italic">Есть</span></p>
+                <div class="bg-slate-900 p-12 rounded-[4rem] text-white flex flex-col justify-center h-[450px] italic shadow-2xl">
+                    <div class="mb-10 text-center border-b border-white/10 pb-8">
+                        <p class="text-5xl font-black text-pink-500 mb-2 italic">140 + 40</p>
+                        <p class="text-slate-400 uppercase text-xs font-bold tracking-widest italic">Золотой стандарт оплаты</p>
+                    </div>
+                    <div class="space-y-6 font-black uppercase text-base italic">
+                        <p class="flex justify-between"><span>Ставка в час:</span> <span class="text-pink-500">140 ₽</span></p>
+                        <p class="flex justify-between"><span>За заказ:</span> <span class="text-pink-500">+40 ₽</span></p>
+                        <p class="flex justify-between"><span>Надбавки:</span> <span class="text-pink-500">Есть</span></p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SEO ТЕКСТ В ПОДВАЛЕ -->
-    <section class="py-20 bg-slate-50 border-t italic">
-        <div class="max-w-4xl mx-auto px-4 text-slate-400 text-sm leading-relaxed text-center italic font-bold">
-            <h2 class="text-slate-900 font-black uppercase mb-4 tracking-widest text-xs italic italic">Альянс Групп: Работа в Самокате</h2>
-            <p class="mb-4">Ищете <strong>работу курьером с почасовой оплатой</strong>? В Альянс Групп мы предлагаем свежие вакансии в сервисе Самокат. Это идеальная <strong>подработка для студентов</strong> с бесплатной формой и велосипедом. Получайте бонусы и приводите друзей за вознаграждение 15 000 рублей.</p>
+    <!-- SEO FOOTER BLOCK -->
+    <section class="py-20 bg-slate-50 border-t border-slate-100">
+        <div class="container-custom text-slate-400 text-sm leading-relaxed text-center italic font-bold">
+            <h2 class="text-slate-900 font-black uppercase mb-4 tracking-widest text-xs italic">Альянс Групп: Работа в Самокате</h2>
+            <p class="mb-4 font-black">Ищете <strong>работу курьером с почасовой оплатой</strong>? В Альянс Групп мы предлагаем вакансии в сервисе Самокат. Это идеальная <strong>подработка для студентов</strong> с бесплатной формой и велосипедом. Получайте бонусы за стаж и приводите друзей за вознаграждение 15 000 рублей.</p>
         </div>
     </section>
 
-    <!-- ОБНОВЛЕННЫЙ ПРОФЕССИОНАЛЬНЫЙ ФУТЕР С ТГ-КАНАЛОМ -->
+    <!-- ФУТЕР -->
     <footer class="bg-slate-900 text-white pt-20 pb-10 px-4 italic font-bold">
-        <div class="max-w-7xl mx-auto">
+        <div class="container-custom italic">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 text-left">
-                
-                <!-- Колонна 1: О Альянс Групп -->
-                <div class="space-y-6">
-                    <div class="flex flex-col text-left">
-                        <span class="font-extrabold text-2xl text-indigo-400 leading-none uppercase italic">Альянс Групп</span>
-                        <span class="text-[10px] text-slate-500 uppercase tracking-widest mt-1 italic">Кадровый портал</span>
-                    </div>
-                    <p class="text-slate-400 text-sm font-medium leading-relaxed italic">Крупнейший официальный партнер сервисов доставки в России. Мы работаем честно и платим вовремя.</p>
-                    
-                    <!-- Ссылка на ТГ Канал -->
-                    <div class="flex flex-col gap-3 italic">
-                        <p class="text-xs uppercase text-indigo-400 tracking-widest">Наше сообщество:</p>
-                        <a href="https://t.me/AllianceGroupVIP" target="_blank" class="flex items-center gap-3 group">
-                            <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center group-hover:bg-indigo-500 transition shadow-lg shadow-indigo-900/20">
-                                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.35-.49.96-.75 3.78-1.65 6.31-2.74 7.58-3.27 3.61-1.5 4.35-1.76 4.84-1.77.11 0 .35.03.51.16.13.11.17.26.19.37.02.08.03.23.02.32z"/></svg>
-                            </div>
-                            <span class="text-sm font-black uppercase group-hover:text-indigo-400 transition italic">TG Канал Альянс Групп</span>
-                        </a>
-                    </div>
+                <div class="space-y-6 italic">
+                    <span class="font-extrabold text-2xl text-indigo-400 leading-none uppercase italic">Альянс Групп</span>
+                    <p class="text-slate-400 text-xs italic">Официальный партнер Самокат. Работаем честно и платим вовремя.</p>
+                    <a href="https://t.me/AllianceGroupVIP" target="_blank" class="flex items-center gap-3 group">
+                        <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center group-hover:bg-indigo-500 transition shadow-lg italic font-black">TG</div>
+                        <span class="text-sm font-black uppercase italic">Канал Сообщества</span>
+                    </a>
                 </div>
-
-                <!-- Колонна 2: Вакансии -->
-                <div class="text-left">
+                <div class="text-left italic">
                     <h4 class="text-indigo-400 uppercase text-xs tracking-widest mb-6 font-black italic">Сервисы</h4>
-                    <ul class="space-y-4 text-sm font-bold uppercase italic italic">
-                        <li><a href="samokat.html" class="hover:text-pink-500 transition tracking-tighter italic">Самокат</a></li>
-                        <li><a href="yandex.html" class="hover:text-yellow-400 transition tracking-tighter italic">Яндекс Еда</a></li>
-                        <li><a href="magnit.html" class="hover:text-red-500 transition tracking-tighter italic">Магнит Доставка</a></li>
-                        <li><a href="lenta.html" class="hover:text-blue-500 transition tracking-tighter italic">Лента Онлайн</a></li>
+                    <ul class="space-y-4 text-sm font-bold uppercase italic">
+                        <li><a href="samokat.html" class="text-pink-500">Работа в Самокате</a></li>
+                        <li><a href="yandex.html" class="hover:text-yellow-400 transition">Работа в Яндексе</a></li>
+                        <li><a href="magnit.html" class="hover:text-red-500 transition">Работа в Магните</a></li>
+                        <li><a href="lenta.html" class="hover:text-blue-500 transition">Работа в Ленте</a></li>
                     </ul>
                 </div>
-
-                <!-- Колонна 3: Разделы -->
-                <div class="text-left">
+                <div class="text-left italic">
                     <h4 class="text-indigo-400 uppercase text-xs tracking-widest mb-6 font-black italic">Навигация</h4>
-                    <ul class="space-y-4 text-sm font-bold uppercase italic italic">
-                        <li><a href="friend.html" class="hover:text-white transition tracking-tighter italic italic">Акция: Приведи друга</a></li>
-                        <li><a href="blog.html" class="hover:text-white transition tracking-tighter italic italic">Блог курьера</a></li>
-                        <li><a href="about.html" class="hover:text-white transition tracking-tighter italic italic">О нашей команде</a></li>
+                    <ul class="space-y-4 text-sm font-bold uppercase italic">
+                        <li><a href="friend.html">Приведи друга</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="about.html">О компании</a></li>
                     </ul>
                 </div>
-
-                <!-- Колонна 4: Кнопки связи -->
-                <div class="bg-white/5 p-6 rounded-[2.5rem] border border-white/10 italic text-center md:text-left">
-                    <h4 class="text-white uppercase text-xs tracking-widest mb-4 font-black italic">Связь с нами</h4>
-                    <div class="space-y-3">
-                        <a href="https://t.me/artyom_alyansgroup" target="_blank" class="block w-full bg-indigo-600 text-center py-4 rounded-2xl hover:bg-indigo-500 transition uppercase text-xs font-black italic shadow-lg">Написать менеджеру</a>
-                        <a href="https://t.me/AllianceGroupVIP" target="_blank" class="block w-full border border-white/20 text-center py-4 rounded-2xl hover:bg-white/10 transition uppercase text-xs font-black italic">Вступить в канал</a>
-                    </div>
-                    <p class="mt-6 text-[10px] text-slate-500 uppercase font-bold text-center italic">Отвечаем в течение 5 минут</p>
-                </div>
-
-            </div>
-
-            <!-- Нижняя плашка -->
-            <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 italic">
-                <div class="text-[10px] text-slate-500 uppercase tracking-widest text-center md:text-left italic">
-                    Альянс Групп &copy;. Официальный партнер. <br>
-                    Информация на сайте не является публичной офертой.
-                </div>
-                <div class="flex gap-6 text-[10px] text-slate-500 uppercase font-black italic">
-                    <a href="#" class="hover:text-white transition">Конфиденциальность</a>
-                    <a href="https://t.me/AllianceGroupVIP" class="hover:text-white transition italic underline underline-offset-4">Новости компании</a>
+                <div class="bg-white/5 p-8 rounded-[3rem] border border-white/10 italic text-center md:text-left italic shadow-2xl">
+                    <h4 class="text-white uppercase text-xs tracking-widest mb-6 font-black">Связь</h4>
+                    <a href="https://t.me/artyom_alyansgroup" target="_blank" class="block w-full bg-pink-600 text-center py-4 rounded-2xl hover:bg-pink-500 transition uppercase text-xs font-black shadow-xl">Менеджер</a>
                 </div>
             </div>
+            <p class="pt-10 border-t border-white/5 text-[10px] text-slate-500 uppercase tracking-widest text-center italic">Альянс Групп &copy; Все права защищены. Официальный партнер Самокат.</p>
         </div>
     </footer>
 
+    <!-- СКРИПТ 3D АНИМАЦИИ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hero = document.getElementById('hero-parallax');
+            const target = document.getElementById('tilt-target');
+            
+            // Работает только на ПК
+            if (window.matchMedia("(pointer: fine)").matches) {
+                hero.addEventListener('mousemove', (e) => {
+                    const cx = window.innerWidth / 2;
+                    const cy = window.innerHeight / 2;
+                    const dx = (e.clientX - cx) / cx;
+                    const dy = (e.clientY - cy) / cy;
+                    target.style.transform = `rotateX(${dy * -12}deg) rotateY(${dx * 12}deg)`;
+                });
+                hero.addEventListener('mouseleave', () => {
+                    target.style.transform = `rotateX(0deg) rotateY(0deg)`;
+                });
+            }
+        });
+    </script>
 </body>
 </html>
